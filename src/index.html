@@ -1,35 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css">
     <title>Members' Clocks</title>
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const CalgaryTime = now.getTime() + now.getTimezoneOffset() * 60000 - 6 * 60 * 60 * 1000;
-            const CopenhagenTime = now.getTime() + (now.getTimezoneOffset() + 2 * 60) * 60000; 
-            const MelbourneTime = now.getTime() + now.getTimezoneOffset() * 60000 + 11 * 60 * 60 * 1000;
-            const PerthTime = now.getTime() + now.getTimezoneOffset() * 60000 + 8 * 60 * 60 * 1000;
-            const BrisbaneTime = now.getTime() + now.getTimezoneOffset() * 60000 + 10 * 60 * 60 * 1000;
-            const VancouverTime = now.getTime() + now.getTimezoneOffset() * 60000 - 7 * 60 * 60 * 1000;
-
-            document.getElementById("CalgaryClock").textContent = new Date(CalgaryTime).toLocaleTimeString();
-            document.getElementById("CopenhagenClock").textContent = new Date(CopenhagenTime).toLocaleTimeString();
-            document.getElementById("MelbourneClock").textContent = new Date(MelbourneTime).toLocaleTimeString();
-            document.getElementById("PerthClock").textContent = new Date(PerthTime).toLocaleTimeString();
-            document.getElementById("BrisbaneClock").textContent = new Date(BrisbaneTime).toLocaleTimeString();
-            document.getElementById("VancouverClock").textContent = new Date(VancouverTime).toLocaleTimeString();
-        }
-
-        setInterval(updateTime, 1000); // Update every second
-    </script>
+    <script src="worldclock.js"></script>
 </head>
 <body>
-    <h1>Members' Clocks</h1>
-    <p>Todd: <span id="CalgaryClock"></span></p>
-    <p>Taxa: <span id="CopenhagenClock"></span></p>
-    <p>HQ: <span id="MelbourneClock"></span></p>
-    <p>Black & White: <span id="BrisbaneClock"></span></p>
-    <p>Swan: <span id="PerthClock"></span></p>
-    <p>Jen, Jon, Shawn: <span id="VancouverClock"></span></p>
+    <div class="clock-container">
+        <iframe src="https://free.timeanddate.com/clock/i9lo3gyq/n152/szw210/szh210/cf100/hnce1ead6" frameborder="0" width="210" height="210"></iframe>
+    </div>
+    <div class="digital_clocks">
+        <h1>Members' Clocks</h1>
+        <p>Todd: <span id="CalgaryClock"></span></p>
+        <p>Taxa: <span id="CopenhagenClock"></span></p>
+        <p>Black & White: <span id="BrisbaneClock"></span></p>
+        <p>Swan: <span id="PerthClock"></span></p>
+        <p>Jen, Jon, Shawn: <span id="VancouverClock"></span></p>
+    </div>
 </body>
 </html>
