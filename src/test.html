@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <script src="worldclock.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="cell-hq">
+            <div class="iframe-caption-top">Melbourne</div>
+
+            <iframe src="https://free.timeanddate.com/clock/i9lo3gyq/n152/szw210/szh210/cf100/hnce1ead6" frameborder="0"
+                title="HQ">
+            </iframe>
+            <div class="iframe-caption-bottom" id="currentDate"></div>
+        </div>
+        <div class="header">ANZ</div>
+        <div class="header">EU</div>
+        <div class="header">NA</div>
+
+        <div class="region">
+            <div class="city-cell">
+                <div class="city">Brisbane</div>
+                <div class="time" id="BrisbaneClock"></div>
+            </div>
+            <div class="city-cell">
+                <div class="city">Adelaide</div>
+                <div class="time">17:00</div>
+            </div>
+            <div class="city-cell">
+                <div class="city">Perth</div>
+                <div class="time" id="PerthClock"></div>
+            </div>
+            <div class="city-cell">
+                <div class="city">Wellington</div>
+                <div class="time">22:00</div>
+            </div>
+        </div>
+
+        <div class="region">
+            <div class="city-cell">
+                <div class="city">Copenhagen</div>
+                <div class="time" id="CopenhagenClock"></div>
+            </div>
+            <div class="city-cell">
+                <div class="city">London</div>
+                <div class="time" id="LondonClock"></div>
+            </div>
+            <div class="city-cell">
+                <div class="city">Helsinki</div>
+                <div class="time" id="HelsinkiClock"></div>
+            </div>
+        </div>
+
+        <div class="city-column">
+            <div class="city-cell">
+                <div class="city">Calgary</div>
+                <div class="time" id="CalgaryClock"></div>
+            </div>
+            <div class="city-cell">
+                <div class="city">Vancouver</div>
+                <div class="time" id="VancouverClock"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
