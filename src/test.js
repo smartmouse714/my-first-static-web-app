@@ -1,38 +1,41 @@
-function getCityTime(offsetHours) {
+// Define a function to get the current time in different cities
+function getCityTimes() {
     const now = new Date();
-    // Calculate the local time in milliseconds based on the timezone offset
-    return new Date(now.getTime() + (now.getTimezoneOffset() * 60000) + (offsetHours * 60 * 60 * 1000)).toLocaleTimeString();
-}
+    const timezoneOffset = now.getTimezoneOffset() * 60000;
 
-function updateClocks() {
     // Define city time offsets in hours
     const cityOffsets = {
+        Adelaide: 10.5,
         Calgary: -6,
         Copenhagen: 2,
-        Helsinki: 11,
+        Helsinki: 3,
+        London: 1,
+        //Melbourne: 11,
         Perth: 8,
         Brisbane: 10,
-        Vancouver: -7
+        Vancouver: -7,
+        Wellington: 13,
     };
 
-    // Update the clock for each city
-    for (const [city, offset] of Object.entries(cityOffsets)) {
-        document.getElementById(`${city}Clock`).textContent = getCityTime(offset);
-    }
+    // Calculate city times
+    const cityTimes = {};
+    Object.keys(cityOffsets).forEach((city) => {
+        const offset = cityOffsets[city] * 60 * 60 * 1000;
+        cityTimes[city] = now.getTime() + timezoneOffset + offset;
+    });
+
+    return cityTimes;
 }
 
-function updateDate() {
-    // Get the element with the id "date-caption"
-    const dateCaptionElement = document.getElementById("currentDate");
+// Define a function to update the clock display
+function updateTime() {
+    const cityTimes = getCityTimes();
 
-    // Create a new Date object to get today's date
-    const today = new Date();
-
-    // Format the date in a user-friendly format (e.g., YYYY-MM-DD)
-    const formattedDate = today.toISOString().split('T')[0];
-
-    // Set the content of the element to today's date
-    dateCaptionElement.textContent = formattedDate;
+    // Update clock display for each city
+    Object.keys(cityTimes).forEach((city) => {
+        const clockElement = document.getElementById(`${city}Clock`);
+        clockElement.textContent = new Date(cityTimes[city]).toLocaleTimeString();
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,9 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
     const formattedDate = today.toISOString().split('T')[0];
     dateCaptionElement.textContent = formattedDate;
-  });
-
-// Call the function to update clocks
-updateClocks();
+});
 
 setInterval(updateTime, 1000); // Update every second

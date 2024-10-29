@@ -1,64 +1,99 @@
+/* Reset */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: #fff;
-}
-
+/* Global Styles */
 body {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 
-.clock-container {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 210px;
-  height: 210px;
-  /*   border: 1px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
- */
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 2px;
+    max-height: 211px;
+    padding: 2px;
 }
 
-.clock-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
+/* Cell Styles */
+.cell-hq {
+    grid-area: 1 / 1 / 6 / 2;
+    /* Span 5 rows, 1 column */
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* justify-content: center; */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 211px;
 }
 
-.digital_clocks {
-  position: relative;
-  left: 250px;
-  flex: 1;
-  /* Allows the clocks section to take available space */
+.iframe-caption-top,
+.iframe-caption-bottom {
+    background-color: #ddd;
+    padding: 3px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    width: 100%;
+
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+.iframe-caption-bottom {
+    border-top: 2px solid #999;
+    margin-top: 10px;
+    margin-bottom: 0;
+    /* font-size: 0.8em; */
 }
 
-main>h1 {
-  text-align: center;
-  font-size: 3.5em;
+.iframe-caption-top {
+    border-bottom: 2px solid #999;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
-.am-style {
-  background-color: black;
-  color: white;
+iframe {
+    width: 210px;
+    height: 210px;
+    border: none;
 }
 
-.pm-style {
-  background-color: white;
-  color: black;
+.header,
+.city-cell {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.city-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.city {
+    font-weight: bold;
+}
+
+.time {
+    font-family: monospace;
+    font-size: 1.1em;
 }
