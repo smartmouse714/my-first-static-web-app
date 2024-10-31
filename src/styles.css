@@ -8,34 +8,29 @@
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    /* font-size: clamp(1rem, 2vw + 1rem, 2.5rem); */
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
 }
 
 /* Grid Layout */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: auto repeat(5, 1fr);
     gap: 2px;
-    height: 211px;
     padding: 2px;
 }
 
 /* Cell Styles */
 .cell-hq {
-    grid-area: 1 / 1 / 6 / 2;
     /* Span 5 rows, 1 column */
+    grid-area: 1 / 1 / 6 / 2;
+
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    /* justify-content: center; */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    
-    width: 211px;
 }
 
 .iframe-caption-top,
@@ -65,8 +60,8 @@ body {
 }
 
 iframe {
-    width: 210px;
     height: 210px;
+    /* width: 210px; */
     border: none;
 }
 
