@@ -6,6 +6,7 @@ function updateTime() {
         "Europe/Helsinki",
         "Europe/Copenhagen",
         "Australia/Perth",
+        "Australia/Darwin",
         "Australia/Brisbane",
         "Australia/Adelaide",
         "America/Vancouver",
@@ -31,4 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
     dateCaptionElement.textContent = today.toISOString().split('T')[0];
 });
+
 setInterval(updateTime, 1000); // Update every second

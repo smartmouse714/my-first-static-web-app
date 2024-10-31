@@ -15,15 +15,15 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto repeat(5, 1fr);
+    grid-template-rows: auto repeat(6, 1fr);
     gap: 2px;
     padding: 2px;
 }
 
 /* Cell Styles */
 .cell-hq {
-    /* Span 5 rows, 1 column */
-    grid-area: 1 / 1 / 6 / 2;
+    /* Span 6 rows, 1 column */
+    grid-area: 1 / 1 / 7 / 2;
 
     background-color: #f0f0f0;
     display: flex;
@@ -75,6 +75,7 @@ iframe {
 }
 
 .header {
+    border-bottom: 2px solid #999;
     font-weight: bold;
     font-size: 1.15em;
     text-transform: uppercase;
